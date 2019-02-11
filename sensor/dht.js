@@ -10,7 +10,7 @@ module.exports = {
                         temp: temperature.toFixed(1),
                         tempUnit: '°C',
                         humidity: humidity.toFixed(1),
-                        tempUnit: '%',
+                        humidityUnit: '%',
                         dateTime: moment().format()
                     });
                 } else {
@@ -18,7 +18,7 @@ module.exports = {
                         temp: 'N/A',
                         tempUnit: '°C',
                         humidity: 'N/A',
-                        tempUnit: '%',
+                        humidityUnit: '%',
                         dateTime: moment().format()
                     })
                 }
