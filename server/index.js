@@ -1,9 +1,9 @@
-var express = require('express');
-var app = express();
-var dht = require('./../sensor/dht');
+const express = require('express');
+const app = express();
+const dht = require('./../sensor/dht');
 
 app.get('/api/temp', async (req, res) => {
-    var values = await dht.getValues();
+    const values = await dht.getValues();
     res.send(JSON.stringify(values));
 });
 

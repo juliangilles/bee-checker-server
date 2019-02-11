@@ -1,8 +1,21 @@
-var sensor = require('node-dht-sensor');
-var moment = require('moment');
+const sensor = require('node-dht-sensor');
+const moment = require('moment');
+const isPi = require('detect-rpi');
 
 module.exports = {
     getValues: async () => {
+        const defaultStatus = {
+            temp: 'N/A',
+            tempUnit: '°C',
+            humidity: 'N/A',
+            humidityUnit: '%',
+            dateTime: moment().format()
+        };
+        if (!isPi()) {
+            return new Promise((resolve) => {
+                resolve(defaultStatus);
+            });
+        }
         return new Promise((resolve, reject) => {
             sensor.read(22, 4, (err, temperature, humidity) => {
                 if (!err) {
@@ -14,13 +27,7 @@ module.exports = {
                         dateTime: moment().format()
                     });
                 } else {
-                    reject({
-                        temp: 'N/A',
-                        tempUnit: '°C',
-                        humidity: 'N/A',
-                        humidityUnit: '%',
-                        dateTime: moment().format()
-                    })
+                    reject(defaultStatus)
                 }
             });
         });
