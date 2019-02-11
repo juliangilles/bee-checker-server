@@ -17,6 +17,7 @@
   "homepage": "https://github.com/juliangilles/bee-checker#readme",
   "dependencies": {
     "express": "^4.16.4",
-    "moment": "^2.24.0"
+    "moment": "^2.24.0",
+    "node-dht-sensor": "0.0.34"
   }
 }
