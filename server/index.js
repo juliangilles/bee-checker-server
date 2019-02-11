@@ -2,9 +2,9 @@ var express = require('express');
 var app = express();
 var dht = require('./../sensor/dht');
 
-app.get('/api/temp', function (req, res) {
-    dht.getValues();
-    res.send('15.00');
+app.get('/api/temp', async function (req, res) {
+    var values = await dht.getValues();
+    res.send(JSON.stringify(values));
 });
 
 app.use(function(req, res, next) {
