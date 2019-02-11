@@ -59,3 +59,8 @@ typings/
 
 # next.js build output
 .next
+
+#libs
+libs/bcm2835-1.58/*
+
+.idea/*
