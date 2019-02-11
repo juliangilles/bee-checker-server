@@ -1,0 +1,21 @@
+{
+  "name": "bee-checker",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "node server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juliangilles/bee-checker.git"
+  },
+  "author": "Julian Gilles",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juliangilles/bee-checker/issues"
+  },
+  "homepage": "https://github.com/juliangilles/bee-checker#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
