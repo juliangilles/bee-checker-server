@@ -9,7 +9,7 @@ app.get('/api/temp', async (req, res) => {
 });
 
 app.get('/api/pic', async (req, res) => {
-    const values = await dht.getValues();
+    const values = await camera.getPicture();
     res.send(JSON.stringify(values));
 });
 
