@@ -4,9 +4,10 @@ const moment = require('moment');
 
 module.exports = {
     getPicture: async () => {
+        const picPath = `${__dirname}/../tmp/test.jpg`;
         const myCamera = new PiCamera({
             mode: 'photo',
-            output: `${__dirname}/test.jpg`,
+            output: picPath,
             width: 640,
             height: 480,
             nopreview: true,
@@ -16,8 +17,8 @@ module.exports = {
             myCamera
                 .snap()
                 .then((result) => {
-                    console.log('done :-)');
-                    resolve('FUN');
+                    console.log(result);
+                    resolve(result);
                 })
                 .catch((error) => {
                     console.log('upps :-(');
