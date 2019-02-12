@@ -24,8 +24,10 @@ module.exports = {
                     });
                 })
                 .catch((error) => {
-                    console.log('upps :-(');
-                    reject('ERROR');
+                    reject({
+                        img: '',
+                        dateTime: moment().format()
+                    });
                 });
         });
     }
