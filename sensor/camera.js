@@ -1,4 +1,5 @@
 const PiCamera = require('pi-camera');
+const fs = require('fs');
 const moment = require('moment');
 
 
@@ -17,8 +18,10 @@ module.exports = {
             myCamera
                 .snap()
                 .then((result) => {
-                    console.log(result);
-                    resolve(result);
+                    resolve({
+                        img: fs.readFileSync(picPath, 'base64'),
+                        dateTime: moment().format()
+                    });
                 })
                 .catch((error) => {
                     console.log('upps :-(');
